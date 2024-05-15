@@ -23,7 +23,7 @@ select* from member order by time DESC limit 3 offset 1;
 select*from member where name='test';
 select*from member where name like '%es%';
 explain select*from member where name like '%es%';
-select*from member where name='test'and password='test';
+select*from member where username='test'and password='test';
 SET SQL_SAFE_UPDATES=0;
 update member set name='test2' where username='test';
 
