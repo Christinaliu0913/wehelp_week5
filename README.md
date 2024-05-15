@@ -13,7 +13,7 @@ create table member(
 );
 
 # Task3
-# insert new row set to be 'test'
+### insert new row set to be 'test'
 
 insert into member(name, username, password) value('test', 'test', 'test');
 insert into member(name, username,password,follower_count) value ('Chris1','christest',1234,103),('Tina2', 'tinatest',1234,567),('Harry3', 'harrytest',3456,222),("Jerry4",'jerrytest',1234,13);
@@ -36,7 +36,7 @@ select avg(follower_count) from
 
 
 # Task5
-#message table
+### message table
 create table message(
  id bigint primary key auto_increment,
  member_id bigint not null, foreign key (member_id) references member(id),
@@ -46,19 +46,19 @@ create table message(
  );
 select*from message;
 
-#data insert to message table
+### data insert to message table
 insert into message (member_id, content, like_count) value(1, 'words',33);
 insert into message (member_id, content, like_count) value(1, 'second test',43);
 insert into message (member_id, content, like_count) value(2, 'hey',23);
 insert into message (member_id, content, like_count) value(2, 'wer',12345);
 insert into message (member_id, content, like_count) value(3, 'you',4);
 insert into message (member_id, content, like_count) value(4, 'learning is hard work',44);
-# 合併資料
+### 合併資料
 SELECT member.name AS sender_name,message.id as message_id, message.member_id, message.content, message.like_count, message.time
 FROM message
 INNER JOIN member ON message.member_id = member.id;
 
-# 篩選usernmae=test
+### 篩選usernmae=test
 select 
 	member.username, 
     message.id as message_id, 
@@ -70,7 +70,7 @@ select
 from message 
 right join member on message.member_id=member.id 
 where member.username='test';
-#get the average like count of message where sender username equal to test
+### get the average like count of message where sender username equal to test
 
 select 
 	member.username,
@@ -79,7 +79,7 @@ from message
 join member on message.member_id=member.id 
 where member.username='test'
 ;
-# get the average like count of messages group by sender username
+### get the average like count of messages group by sender username
 select 
 	member.username,
     avg(message.like_count)
