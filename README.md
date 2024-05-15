@@ -1,5 +1,6 @@
 # wehelp_week5
 
+# Task2
 Create database website;
 use website;
 create table member(
@@ -11,7 +12,9 @@ create table member(
     time datetime not null default current_timestamp
 );
 
-#insert new row set to be test
+# Task3
+# insert new row set to be 'test'
+
 insert into member(name, username, password) value('test', 'test', 'test');
 insert into member(name, username,password,follower_count) value ('Chris1','christest',1234,103),('Tina2', 'tinatest',1234,567),('Harry3', 'harrytest',3456,222),("Jerry4",'jerrytest',1234,13);
 select*from member;
@@ -23,12 +26,16 @@ explain select*from member where name like '%es%';
 select*from member where name='test'and password='test';
 SET SQL_SAFE_UPDATES=0;
 update member set name='test2' where username='test';
+
+# Task4
 select count(id) from member;
 select sum(follower_count) from member;
 select avg(follower_count) from member;
 select avg(follower_count) from 
 (select follower_count from member order by follower_count desc limit 2) as top_followers;
 
+
+# Task5
 #message table
 create table message(
  id bigint primary key auto_increment,
@@ -46,12 +53,12 @@ insert into message (member_id, content, like_count) value(2, 'hey',23);
 insert into message (member_id, content, like_count) value(2, 'wer',12345);
 insert into message (member_id, content, like_count) value(3, 'you',4);
 insert into message (member_id, content, like_count) value(4, 'learning is hard work',44);
-#合併資料
+# 合併資料
 SELECT member.name AS sender_name,message.id as message_id, message.member_id, message.content, message.like_count, message.time
 FROM message
 INNER JOIN member ON message.member_id = member.id;
 
-#篩選usernmae=test
+# 篩選usernmae=test
 select 
 	member.username, 
     message.id as message_id, 
