@@ -2,6 +2,7 @@
 
 # Task2
 Create database website;
+
 use website;
 create table member(
 	id bigint primary key auto_increment,
