@@ -1,5 +1,6 @@
 # wehelp_week5
 
+```sql
 # Task2
 Create database website;
 use website;
