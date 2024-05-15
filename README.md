@@ -16,7 +16,7 @@ create table member(
 ### insert new row set to be 'test'
 
 insert into member(name, username, password) value('test', 'test', 'test');
-insert into member(name, username,password,follower_count) value ('Chris1','christest',1234,103),('Tina2', 'tinatest',1234,567),('Harry3', 'harrytest',3456,222),("Jerry4",'jerrytest',1234,13);
+insert into member(name, username,password,follower_count) value ('Chris1','christest',1234,103),('Tina2', 'tinatest',1234,567),('Harry3', 'harrytest',3456,222),("test",'test',1234,13);
 select*from member;
 select*from member order by time DESC;
 select* from member order by time DESC limit 3 offset 1;
